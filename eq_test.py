@@ -25,7 +25,7 @@ def eq_test(x,y,nboot=1000):
         You may increase nboot for reducing the p-value.
     
     F : float
-        The DISCO F_alpha value calculated using the two samples
+        The DISCO F_alpha value calculated using the samples
     
     -----------
     Usage:
@@ -43,7 +43,7 @@ def eq_test(x,y,nboot=1000):
     rand    = random.permutation
     for i in range(nboot):
         idx = rand(N)
-        F1_boot[i] = energy2(stack[idx[:Nx]],stack[idx[Nx:]])
+        F1_boot[i] = energy(stack[idx[:Nx]],stack[idx[Nx:]])
     p = (1+np.sum(F1_boot >= F1_en)) / (1+nboot)
     return p,F1_en
     
