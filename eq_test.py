@@ -15,7 +15,7 @@ def eq_test(x,y,nboot=1000):
     y : ndarray, shape (n2, p)
         Data of sample 2 with p dimensions
         The sample sizes of n1 and n2 can be different.
-    nboot : None or int
+    nboot : int
         Number of bootstrap resample for estimating the empirical p-value.
 
     Returns
